@@ -10,6 +10,8 @@ const connectDatabase = async () => {
             useFindAndModify: false,
             useCreateIndex: true
         });
+        console.log('Database connected successfully!');
+
     } catch (e) {
         console.log(e);
         process.exit(1); // Kill process
