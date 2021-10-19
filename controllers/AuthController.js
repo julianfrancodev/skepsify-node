@@ -38,7 +38,7 @@ exports.authUser = async (req, res) => {
         }, (error, token) => {
             if (error) throw error;
 
-            res.json({ token: token });
+            res.json({ token: token, user: user.id });
         });
 
 
@@ -52,7 +52,7 @@ exports.authUser = async (req, res) => {
 exports.authenticatedUser = async (req, res)=>{
     try {
 
-        const user = await User.findById(req.user.id).select('password');
+        const user = await User.findById(req.user.id).select('-password');
         
         res.json({user});
         

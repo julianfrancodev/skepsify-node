@@ -42,15 +42,35 @@ exports.createUser = async (req, res) => {
         jwt.sign(payload, process.env.SECRET_KEY, {
 
             expiresIn: 10000000
-            
+
         }, (error, token) => {
             if (error) throw error;
 
-            res.json({ token: token });
+            res.json({ token: token, user: user.id });
         });
 
     } catch (e) {
         console.log(e);
     }
+
+}
+
+exports.getUser = async (req, res) => {
+
+
+
+    try {
+
+        let user = await User.findById(req.params.id);
+
+        res.json({ user });
+
+    } catch (error) {
+        return res.status(400).json({ msg: "Error getting user" });
+
+    }
+
+
+
 
 }

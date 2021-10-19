@@ -15,11 +15,14 @@ const UserSchema = mongoose.Schema({
     password: {
         type:String,
         required: true,
-        trim: true
+        trim: true,
     },
     role: {
         type: String,
         default: "NORMAL"
+    },
+    image: {
+        type: String
     },
     createdAt:{
         type: Date,

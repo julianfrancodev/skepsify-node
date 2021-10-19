@@ -1,6 +1,7 @@
 const express = require("express");
 
 const UserController = require("../controllers/UserController");
+const Auth = require('../middleware/Auth');
 
 const {check} = require("express-validator");
 
@@ -15,7 +16,9 @@ router.post("/",[
     check("password", "El password debe ser de minimo 6 caracteres").isLength({min: 6})
 ],
     UserController.createUser
-)
+);
+
+router.get('/:id', Auth, UserController.getUser);
 
 
 

@@ -7,6 +7,16 @@ const TopicSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+
+    image:{
+        type:String,
+        required: true,
+    },
+
+    phrase:{
+        type: String,
+        required: true
+    },
     
     createdAt: {
         type: Date,
