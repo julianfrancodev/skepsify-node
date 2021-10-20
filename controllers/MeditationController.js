@@ -30,7 +30,7 @@ exports.createMeditation = async (req, res) => {
 
 }
 
-exports.getHomeRandomMedidations = async (req, res) => {
+exports.getHomeMedidations = async (req, res) => {
 
     try {
 
@@ -113,6 +113,37 @@ exports.getMoreCoursesForYou = async (req, res)=>{
     try {
 
         await Meditation.findRandom({}, {}, {limit: 11}, function(err, meditations) { 
+            res.json({meditations});
+        });
+
+    } catch (error) {
+        console.log(error);
+
+        res.status(500).json({ msg: "Error getting home random meditations" });
+
+    }
+}
+
+exports.getRightNowMeditation = async (req, res)=>{
+    try {
+
+        await Meditation.findRandom({}, {}, {limit: 1}, function(err, meditations) { 
+            res.json({meditations});
+        });
+
+    } catch (error) {
+        console.log(error);
+
+        res.status(500).json({ msg: "Error getting home random meditations" });
+
+    }
+}
+
+
+exports.getInsterestMeditation = async (req, res)=>{
+    try {
+
+        await Meditation.findRandom({}, {}, {limit: 1}, function(err, meditations) { 
             res.json({meditations});
         });
 

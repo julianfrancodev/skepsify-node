@@ -26,7 +26,7 @@ router.post('/', Auth, [
 ], MeditationController.createMeditation);
 
 router.get('/homelistrandom', Auth,
-    MeditationController.getHomeRandomMedidations);
+    MeditationController.getHomeMedidations);
 
 router.get('/getmorecoursesforyou', Auth, MeditationController.getMoreCoursesForYou);
 
@@ -38,6 +38,8 @@ router.get('/getmeditationsbytool/:id', Auth, MeditationController.getMeditation
 
 router.get('/getmeditationsbytopic/:id', Auth, MeditationController.getMeditationsByTopic);
 
+router.get('/getrightnowmeditation', Auth, MeditationController.getRightNowMeditation);
 
+router.get('/getinterestmeditation', Auth, MeditationController.getInsterestMeditation);
 
 module.exports = router;
