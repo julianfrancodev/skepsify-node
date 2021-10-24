@@ -8,7 +8,7 @@ const Auth = require("../middleware/Auth");
 
 const router = express.Router();
 
-// api/users
+//? api/auth
 
 router.post('/',[
     check("email","Agrega un email valido").isEmail(),

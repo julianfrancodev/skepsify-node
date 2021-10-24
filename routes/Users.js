@@ -8,7 +8,7 @@ const {check} = require("express-validator");
 
 const router = express.Router();
 
-// api/users
+//? api/users
 
 router.post("/",[
     check("name", "El nombre es obligatorio").not().isEmpty(),

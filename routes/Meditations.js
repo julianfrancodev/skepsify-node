@@ -25,8 +25,7 @@ router.post('/', Auth, [
 
 ], MeditationController.createMeditation);
 
-router.get('/homelistrandom', Auth,
-    MeditationController.getHomeMedidations);
+router.get('/homelistrandom', Auth, MeditationController.getHomeMedidations);
 
 router.get('/getmorecoursesforyou', Auth, MeditationController.getMoreCoursesForYou);
 

@@ -9,6 +9,8 @@ const { check } = require("express-validator");
 
 const router = express.Router();
 
+//? /api/topics
+
 
 router.post('/', Auth, [
     check('name', "El nombre es obligatorio").not().isEmpty(),

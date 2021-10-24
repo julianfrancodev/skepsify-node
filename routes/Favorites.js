@@ -11,6 +11,9 @@ const {check} = require("express-validator");
 
 const router = express.Router();
 
+//? /api/favorites
+
+
 router.post('/', Auth,[
     check('user','Relacionar el usuario el obligatorio').not().isEmpty(),
     check('meditation','Relacionar la meditacon es obligatorio').not().isEmpty(),

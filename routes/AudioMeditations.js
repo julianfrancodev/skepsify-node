@@ -8,6 +8,8 @@ const { check } = require("express-validator");
 
 const router = express.Router();
 
+//? /api/audiomeditations
+
 
 router.post('/', Auth, [
     check("name", "El nombre del audio es obligatorio").not().isEmpty(),

@@ -11,6 +11,8 @@ const { check } = require("express-validator");
 
 const router = express.Router();
 
+//? /api/recents
+
 
 router.post('/', Auth, [
 

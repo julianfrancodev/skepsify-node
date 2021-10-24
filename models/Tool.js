@@ -6,6 +6,11 @@ const ToolSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+    phrase:{
+        type: String,
+        required: true,
+        trim: true
+    },
     icon: {
         type: String,
         required: true,
