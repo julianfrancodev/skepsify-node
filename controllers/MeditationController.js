@@ -90,6 +90,8 @@ exports.getMeditationsByTool = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        res.status(500).json({ msg: "Error getting meditations" });
+
     }
 
 }
@@ -106,6 +108,8 @@ exports.getMeditationsByTopic = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        res.status(500).json({ msg: "Error getting meditations" });
+
     }
 }
 

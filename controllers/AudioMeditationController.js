@@ -28,6 +28,22 @@ exports.createAudioMeditation = async (req, res) => {
 
 }
 
-exports.getAudioByMedidations = async (req, res) => {
+exports.getAudiosByMedidation = async (req, res) => {
+
+    try {
+        
+
+        let meditation = req.params.id;
+        let level = req.params.level;
+
+        let meditationAudio = await AudioMeditation.find({meditation: meditation, level: level});
+
+        res.json({meditationAudio});
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error getting audios from  meditations" });
+
+    }
 
 }

@@ -16,7 +16,11 @@ router.post('/', Auth, [
     check("meditation", "La meditacion es obligatoria").not().isEmpty(),
     check("status", "El status es obligatorio").not().isEmpty(),
     check("level", "El nivel es obligatorio").not().isEmpty(),
+    check("plan", "El plan es obligatorio").not().isEmpty(),
     check("audio", "El audio es obligatorio").not().isEmpty(),
 ], AudioMeditationController.createAudioMeditation);
+
+
+router.get('/getaudiobymeditation/:id/:level', Auth, AudioMeditationController.getAudiosByMedidation);
 
 module.exports = router;
