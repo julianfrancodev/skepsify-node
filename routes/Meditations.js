@@ -17,7 +17,6 @@ router.post('/', Auth, [
     check('image', "La imagen es obligatoria").not().isEmpty(),
     check('duration', "La duracion es requerida").not().isEmpty(),
     check('details', "La descripcion es obligatoria").not().isEmpty(),
-    check('audio', "El audio es obligatorio").not().isEmpty(),
     check('instructor', "El instructor es obligatorio").not().isEmpty(),
     check('status', "El estado es obligatorio").not().isEmpty(),
     check('topic', 'El tema al que pertence es obligatorio').not().isEmpty(),

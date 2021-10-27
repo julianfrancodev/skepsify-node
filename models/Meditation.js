@@ -20,10 +20,6 @@ let MeditationSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    audio:{
-        type: String,
-        required: true
-    },
     instructor:{
         type: String,
         required: true
