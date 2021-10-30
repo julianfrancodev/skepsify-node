@@ -40,4 +40,7 @@ router.get('/getrightnowmeditation', Auth, MeditationController.getRightNowMedit
 
 router.get('/getinterestmeditation', Auth, MeditationController.getInsterestMeditation);
 
+router.get('/getmeditationsbyquery/:query', Auth, MeditationController.getMeditationsByQuery);
+
+
 module.exports = router;

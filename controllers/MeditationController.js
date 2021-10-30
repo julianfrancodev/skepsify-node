@@ -158,3 +158,19 @@ exports.getInsterestMeditation = async (req, res)=>{
 
     }
 }
+
+exports.getMeditationsByQuery = async (req, res)=>{
+    try {
+        
+        let meditation = req.params.query;
+
+        let meditations = await  Meditation.find({name: { $regex: '.*' + meditation + '.*', $options: "i" } }).limit(5);
+
+        res.json({meditations});
+
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error getting audios from  meditations" });
+    }
+}
