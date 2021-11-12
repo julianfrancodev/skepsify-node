@@ -34,4 +34,17 @@ exports.createRecent = async (req, res)=>{
 
 exports.getRecentsByUser = async (req, res)=>{
 
+    try {
+
+        let userId = req.params.id;
+
+        let recents = await Recent.find({user: userId}).populate('meditation');
+
+        res.json({recents});
+        
+    } catch (error) {
+        return res.status(400).json({ msg: "Error getting recents" });
+
+    }
+
 }

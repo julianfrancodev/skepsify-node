@@ -22,5 +22,6 @@ router.post('/', Auth,[
 ],FavoriteController.createFavorites);
 
 
+router.get('/getfavoritesbyuser/:id', Auth, FavoriteController.getFavoritesByUser);
 
 module.exports = router;

@@ -21,7 +21,7 @@ router.post('/', Auth, [
 
 ], RecentController.createRecent);
 
-
+router.get('/getrecentsbyuser/:id', Auth, RecentController.getRecentsByUser);
 
 
 module.exports = router;

@@ -25,5 +25,5 @@ app.use('/api/topics', require('./routes/Topics'));
 app.use('/api/audiomeditations', require('./routes/AudioMeditations'));
 
 app.listen(PORT, () => {
-    console.log(`Server Runing in port ${PORT}`)
+    console.log(`Server Runing in port ${PORT} 🙌`)
 });
