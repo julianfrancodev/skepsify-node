@@ -23,6 +23,8 @@ app.use('/api/recents', require('./routes/Recents'));
 app.use('/api/tools', require('./routes/Tools'));
 app.use('/api/topics', require('./routes/Topics'));
 app.use('/api/audiomeditations', require('./routes/AudioMeditations'));
+app.use('/api/podcasts', require('./routes/Podcast'));
+
 
 app.listen(PORT, () => {
     console.log(`Server Runing in port ${PORT} 🙌`)
