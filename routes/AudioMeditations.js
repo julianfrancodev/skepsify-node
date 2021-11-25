@@ -13,9 +13,7 @@ const router = express.Router();
 
 router.post('/', Auth, [
     check("name", "El nombre del audio es obligatorio").not().isEmpty(),
-    check("meditation", "La meditacion es obligatoria").not().isEmpty(),
     check("status", "El status es obligatorio").not().isEmpty(),
-    check("level", "El nivel es obligatorio").not().isEmpty(),
     check("duration", "La duracion es obligatorio").not().isEmpty(),
     check("plan", "El plan es obligatorio").not().isEmpty(),
     check("audio", "El audio es obligatorio").not().isEmpty(),
@@ -23,5 +21,6 @@ router.post('/', Auth, [
 
 
 router.get('/getaudiobymeditation/:id/:level', Auth, AudioMeditationController.getAudiosByMedidation);
+router.get('/getaudiopodcasts/', Auth, AudioMeditationController.getPodcastsAudios);
 
 module.exports = router;

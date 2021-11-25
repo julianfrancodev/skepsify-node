@@ -5,6 +5,10 @@ const AudioMeditationSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    image:{
+        type: String,
+        required: true
+    },
     meditation:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Meditation'
@@ -15,7 +19,6 @@ const AudioMeditationSchema = mongoose.Schema({
     },
     level: {
         type: String,
-        required: true
     },
     audio: {
         type: String,

@@ -47,3 +47,21 @@ exports.getAudiosByMedidation = async (req, res) => {
     }
 
 }
+
+
+exports.getPodcastsAudios = async (req, res)=>{
+
+
+    try {
+
+        let podcats = await AudioMeditation.find({plan: 'PODCAST'});
+
+        res.json({podcats});
+
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error getting podcasts from audios" });
+    }
+
+}
